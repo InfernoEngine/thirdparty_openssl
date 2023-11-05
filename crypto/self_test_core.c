@@ -13,6 +13,11 @@
 #include "internal/cryptlib.h"
 #include "crypto/context.h"
 
+#if defined(OPENSSL_SYS_WINDOWS)
+#pragma comment(lib, "Crypt32.lib")
+#pragma comment(lib, "Ws2_32.lib")
+#endif
+
 typedef struct self_test_cb_st
 {
     OSSL_CALLBACK *cb;

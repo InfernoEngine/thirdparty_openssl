@@ -13,7 +13,7 @@
 #include "internal/thread_once.h"
 #include "internal/cryptlib.h"
 #include "internal/e_os.h"
-#include "buildinf.h"
+//#include "buildinf.h"
 
 #if defined(__arm__) || defined(__arm) || defined(__aarch64__)
 # include "arm_arch.h"
@@ -172,11 +172,11 @@ const char *OPENSSL_info(int t)
 
     switch (t) {
     case OPENSSL_INFO_CONFIG_DIR:
-        return OPENSSLDIR;
+        return "";// OPENSSLDIR;
     case OPENSSL_INFO_ENGINES_DIR:
-        return ENGINESDIR;
+        return "";//ENGINESDIR;
     case OPENSSL_INFO_MODULES_DIR:
-        return MODULESDIR;
+        return "";//MODULESDIR;
     case OPENSSL_INFO_DSO_EXTENSION:
         return DSO_EXTENSION;
     case OPENSSL_INFO_DIR_FILENAME_SEPARATOR:

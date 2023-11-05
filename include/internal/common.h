@@ -80,6 +80,10 @@ __owur static ossl_inline int ossl_assert_int(int expr, const char *exprstr,
 
 # define OPENSSL_CONF             "openssl.cnf"
 
+#ifndef OPENSSLDIR
+#define OPENSSLDIR "."
+#endif
+
 # ifndef OPENSSL_SYS_VMS
 #  define X509_CERT_AREA          OPENSSLDIR
 #  define X509_CERT_DIR           OPENSSLDIR "/certs"

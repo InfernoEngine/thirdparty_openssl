@@ -9,7 +9,7 @@
 
 #include "internal/cryptlib.h"
 
-#include "buildinf.h"
+//#include "buildinf.h"
 
 unsigned long OpenSSL_version_num(void)
 {
@@ -53,11 +53,11 @@ const char *OpenSSL_version(int t)
     case OPENSSL_FULL_VERSION_STRING:
         return OPENSSL_FULL_VERSION_STR;
     case OPENSSL_BUILT_ON:
-        return DATE;
+        return __DATE__;
     case OPENSSL_CFLAGS:
-        return compiler_flags;
+        return "N/A";// compiler_flags;
     case OPENSSL_PLATFORM:
-        return PLATFORM;
+        return "N/A";// PLATFORM;
     case OPENSSL_DIR:
 #ifdef OPENSSLDIR
         return "OPENSSLDIR: \"" OPENSSLDIR "\"";

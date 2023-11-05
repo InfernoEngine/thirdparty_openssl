@@ -455,7 +455,7 @@ ENGINE *ENGINE_by_id(const char *id)
      */
     if (strcmp(id, "dynamic")) {
         if ((load_dir = ossl_safe_getenv("OPENSSL_ENGINES")) == NULL)
-            load_dir = ENGINESDIR;
+            load_dir = ".";// ENGINESDIR;
         iterator = ENGINE_by_id("dynamic");
         if (!iterator || !ENGINE_ctrl_cmd_string(iterator, "ID", id, 0) ||
             !ENGINE_ctrl_cmd_string(iterator, "DIR_LOAD", "2", 0) ||
